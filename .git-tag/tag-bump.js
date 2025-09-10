@@ -31,8 +31,11 @@ function bumpVersion(lastTag, commitMsg) {
 
   if (/^BREAKING/i.test(msg)) {
 	major++;
+	minor = 0;
+    patch = 0;
   } else if (/^feat/i.test(msg)) {
 	minor++;
+    patch = 0;
   } else if (/^fix/i.test(msg)) {
 	patch++;
   } else {
