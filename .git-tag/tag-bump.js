@@ -29,7 +29,9 @@ function bumpVersion(lastTag, commitMsg) {
 
   const msg = commitMsg.trim();
 
-  if (/^BREAKING/i.test(msg)) {
+const isMajor = /^\s*BREAKING/i.test(msg) || /^[a-z]+!:/i.test(msg);
+
+  if (isMajor) {
 	major++;
 	minor = 0;
     patch = 0;
