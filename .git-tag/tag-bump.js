@@ -29,16 +29,15 @@ function bumpVersion(lastTag, commitMsg) {
 
   const msg = commitMsg.trim();
 
-const isMajor = /^\s*BREAKING/i.test(msg) || /^[a-z]+!:/i.test(msg);
-
-  if (isMajor) {
+  
+  if (/^feat/i.test(msg)) {
 	major++;
 	minor = 0;
     patch = 0;
   } else if (/^feat/i.test(msg)) {
 	minor++;
     patch = 0;
-  } else if (/^fix|refactor/i.test(msg)) {
+  } else if (/^fix/i.test(msg)) {
 	patch++;
   } else {
 	return null;
