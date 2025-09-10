@@ -29,7 +29,7 @@ function bumpVersion(lastTag, commitMsg) {
 
   const msg = commitMsg.trim();
 
-  if (/^(feat|refactor|BREAKING)/i.test(msg)) {
+  if (/^BREAKING/i.test(msg)) {
 	major++;
   } else if (/^feat/i.test(msg)) {
 	minor++;
