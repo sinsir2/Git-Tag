@@ -38,7 +38,7 @@ const isMajor = /^\s*BREAKING/i.test(msg) || /^[a-z]+!:/i.test(msg);
   } else if (/^feat/i.test(msg)) {
 	minor++;
     patch = 0;
-  } else if (/^fix/i.test(msg)) {
+  } else if (/^fix|refactor/i.test(msg)) {
 	patch++;
   } else {
 	return null;
